@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Metadata } from 'next';
+
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
@@ -61,7 +61,7 @@ export default function Contact() {
         service: '',
         message: ''
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -94,7 +94,7 @@ export default function Contact() {
               <div>
                 <h2 className="text-3xl font-bold mb-8 text-[#0b2a6f]">Get In Touch</h2>
                 <p className="text-lg text-gray-700 mb-8">
-                  We're here to help you with all your investigative needs. Contact us today to discuss 
+                  We&apos;re here to help you with all your investigative needs. Contact us today to discuss 
                   your case and learn how we can assist you in uncovering the truth.
                 </p>
 
@@ -162,7 +162,7 @@ export default function Contact() {
                 
                 {submitStatus === 'success' && (
                   <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-                    Thank you for your message! We'll get back to you within 24 hours.
+                    Thank you for your message! We&apos;ll get back to you within 24 hours.
                   </div>
                 )}
 
@@ -290,8 +290,8 @@ export default function Contact() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6 text-[#0b2a6f]">Need Immediate Assistance?</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              For urgent matters that require immediate attention, don't hesitate to call us directly. 
-              We understand that some situations can't wait.
+              For urgent matters that require immediate attention, don&apos;t hesitate to call us directly. 
+              We understand that some situations can&apos;t wait.
             </p>
             <a href="tel:786-556-3313" className="btn-primary text-xl px-10 py-4 inline-flex items-center space-x-2">
               <Phone className="w-6 h-6" />

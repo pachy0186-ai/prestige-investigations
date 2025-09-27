@@ -207,7 +207,7 @@ export default function Services() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">Need Our Services?</h2>
             <p className="text-xl mb-8 text-blue-200 max-w-2xl mx-auto">
-              Contact us today to discuss your specific needs. We're here to provide professional, 
+              Contact us today to discuss your specific needs. We&apos;re here to provide professional, 
               confidential investigative services tailored to your situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">

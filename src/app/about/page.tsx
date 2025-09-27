@@ -213,7 +213,7 @@ export default function About() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Work With Us?</h2>
             <p className="text-xl mb-8 text-blue-200 max-w-2xl mx-auto">
-              Contact us today to discuss your investigative needs. We're here to help you find the answers you're looking for.
+              Contact us today to discuss your investigative needs. We&apos;re here to help you find the answers you&apos;re looking for.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:786-556-3313" className="btn-secondary text-lg px-8 py-4">
