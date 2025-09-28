@@ -3,12 +3,21 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import TopBar from './TopBar';
 
-const Navigation = () => {
+export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
@@ -18,103 +27,106 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
-      {/* Top bar with contact info */}
-      <div className="bg-[#0b2a6f] text-white py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Phone size={14} />
-              <a href="tel:786-556-3313" className="hover:text-[#facc15] transition-colors">
+    <>
+      <TopBar />
+      <nav className="bg-prestige-black sticky top-0 z-40 border-b border-white/10">
+        <div className="container max-w-6xl mx-auto px-4 md:px-6">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/prestige_banner.webp"
+                alt="Prestige Executive Investigations LLC"
+                width={200}
+                height={40}
+                className="h-8 w-auto"
+                priority
+              />
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-white hover:text-prestige-gold transition-colors duration-200 font-medium relative group"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-prestige-gold group-hover:w-full transition-all duration-300"></span>
+                </Link>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="md:hidden text-white hover:text-prestige-gold transition-colors p-2"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMenuOpen && (
+          <div 
+            className="mobile-menu-overlay open"
+            onClick={closeMenu}
+          />
+        )}
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-8">
+              <Image
+                src="/images/prestige_banner.webp"
+                alt="Prestige Executive Investigations LLC"
+                width={150}
+                height={30}
+                className="h-6 w-auto"
+              />
+              <button
+                onClick={closeMenu}
+                className="text-white hover:text-prestige-gold transition-colors p-2"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className="block text-white hover:text-prestige-gold transition-colors duration-200 font-medium py-3 text-lg border-b border-white/10"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <a 
+                href="tel:786-556-3313"
+                className="block text-prestige-gold font-semibold text-lg mb-2"
+              >
                 786-556-3313
               </a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Mail size={14} />
-              <a href="mailto:Prestigeinvestigations@outlook.com" className="hover:text-[#facc15] transition-colors">
+              <a 
+                href="mailto:Prestigeinvestigations@outlook.com"
+                className="block text-gray-300 text-sm"
+              >
                 Prestigeinvestigations@outlook.com
               </a>
             </div>
           </div>
-          <div className="hidden md:block">
-            <span className="text-[#facc15]">Licensed PI #A1700257</span>
-          </div>
         </div>
-      </div>
-
-      {/* Main navigation */}
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="relative w-48 h-12">
-              <Image
-                src="/images/prestige_banner.webp"
-                alt="Prestige Executive Investigations LLC"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-700 hover:text-[#0b2a6f] font-medium transition-colors relative group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#facc15] group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="btn-primary"
-            >
-              Get Started
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-gray-700 hover:text-[#0b2a6f] font-medium transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Link
-                href="/contact"
-                className="btn-primary inline-block text-center mt-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      </nav>
+    </>
   );
-};
-
-export default Navigation;
+}

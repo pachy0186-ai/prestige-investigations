@@ -1,12 +1,7 @@
-import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Shield, Award, Users, CheckCircle } from 'lucide-react';
-
-export const metadata: Metadata = {
-  title: 'About Us | Prestige Executive Investigations LLC',
-  description: 'Learn about our professional investigative team, our mission, and our commitment to providing confidential, reliable services in South Florida.',
-};
+import Button from '@/components/Button';
+import { Shield, Award, Users, CheckCircle, Globe, Clock } from 'lucide-react';
 
 export default function About() {
   return (
@@ -15,12 +10,15 @@ export default function About() {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#0b2a6f] to-[#1e40af] text-white py-20">
-          <div className="container mx-auto px-4">
+        <section className="bg-prestige-black text-white py-20">
+          <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">About Prestige Executive Investigations</h1>
-              <p className="text-xl text-blue-200">
-                Your trusted partner in professional investigative services throughout South Florida
+              <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-6">
+                About <span className="text-prestige-gold">Prestige Executive Investigations</span>
+              </h1>
+              <p className="text-xl text-gray-200 leading-relaxed">
+                Your trusted partner in professional investigative services throughout South Florida. 
+                Licensed, experienced, and committed to delivering results with complete discretion.
               </p>
             </div>
           </div>
