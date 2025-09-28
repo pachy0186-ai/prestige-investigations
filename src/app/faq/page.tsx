@@ -81,7 +81,7 @@ export default function FAQ() {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[prestige-gold] to-[prestige-black] text-white py-20">
+        <section className="bg-prestige-black text-white py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">Frequently Asked Questions</h1>
@@ -93,35 +93,35 @@ export default function FAQ() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16">
+        <section className="py-16 bg-prestige-black">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[prestige-gold]">Common Questions</h2>
-                <p className="text-lg text-gray-600">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-prestige-gold">Common Questions</h2>
+                <p className="text-lg text-brand-light">
                   Find answers to the most frequently asked questions about our services, process, and policies.
                 </p>
               </div>
 
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm">
+                  <div key={index} className="bg-white/5 border border-white/10 rounded-lg shadow-sm">
                     <button
-                      className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                      className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/10 transition-colors"
                       onClick={() => toggleItem(index)}
                     >
-                      <h3 className="text-lg font-semibold text-[prestige-gold] pr-4">
+                      <h3 className="text-lg font-semibold text-white pr-4">
                         {faq.question}
                       </h3>
                       {openItems.includes(index) ? (
-                        <ChevronUp className="w-5 h-5 text-[#facc15] flex-shrink-0" />
+                        <ChevronUp className="w-5 h-5 text-prestige-gold flex-shrink-0" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-[#facc15] flex-shrink-0" />
+                        <ChevronDown className="w-5 h-5 text-prestige-gold flex-shrink-0" />
                       )}
                     </button>
                     {openItems.includes(index) && (
                       <div className="px-6 pb-4">
-                        <p className="text-gray-700 leading-relaxed">
+                        <p className="text-brand-light leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
@@ -134,10 +134,10 @@ export default function FAQ() {
         </section>
 
         {/* Contact CTA */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-prestige-black border-t border-prestige-gold">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-[prestige-gold]">Still Have Questions?</h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-prestige-gold">Still Have Questions?</h2>
+            <p className="text-lg text-brand-light mb-8 max-w-2xl mx-auto">
               If you don&apos;t see your question answered here, don&apos;t hesitate to contact us. 
               We&apos;re here to help and provide you with the information you need.
             </p>
@@ -145,7 +145,7 @@ export default function FAQ() {
               <a href="tel:786-556-3313" className="btn-primary text-lg px-8 py-4">
                 Call 786-556-3313
               </a>
-              <a href="mailto:Prestigeinvestigations@outlook.com" className="bg-white text-[prestige-gold] border-2 border-[prestige-gold] hover:bg-[prestige-gold] hover:text-white text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-200">
+              <a href="mailto:Prestigeinvestigations@outlook.com" className="bg-white text-prestige-black border-2 border-prestige-gold hover:bg-prestige-gold hover:text-prestige-black text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-200">
                 Send Email
               </a>
             </div>
