@@ -46,11 +46,11 @@ export default function Blog() {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#0b2a6f] to-[#1e40af] text-white py-20">
+        <section className="bg-prestige-black text-white py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">Insights & Resources</h1>
-              <p className="text-xl text-blue-200">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-prestige-gold">Insights & Resources</h1>
+              <p className="text-xl text-brand-light">
                 Expert insights, industry updates, and educational resources from our investigative professionals
               </p>
             </div>
@@ -66,8 +66,8 @@ export default function Blog() {
                   key={category}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     category === "All" 
-                      ? "bg-[#0b2a6f] text-white" 
-                      : "bg-white/10 text-white hover:bg-[#0b2a6f] hover:text-white"
+                      ? "bg-prestige-gold text-prestige-black" 
+                      : "bg-white/10 text-white hover:bg-prestige-gold hover:text-prestige-black"
                   }`}
                 >
                   {category}
@@ -84,10 +84,10 @@ export default function Blog() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {blogPosts.map((post, index) => (
                   <article key={index} className="bg-white/5 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-white/10">
-                    <div className="h-48 bg-gradient-to-br from-[#0b2a6f] to-[#1e40af] flex items-center justify-center">
+                    <div className="h-48 bg-gradient-to-br from-prestige-black to-prestige-gray flex items-center justify-center">
                       <div className="text-center text-white">
                         <h3 className="text-lg font-semibold mb-2">{post.category}</h3>
-                        <div className="w-16 h-1 bg-[#facc15] mx-auto"></div>
+                        <div className="w-16 h-1 bg-prestige-gold mx-auto"></div>
                       </div>
                     </div>
                     <div className="p-6">
@@ -124,23 +124,23 @@ export default function Blog() {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="py-16 bg-[#0b2a6f] text-white">
+        <section className="py-16 bg-prestige-black text-white border-t border-prestige-gold">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">Stay Informed</h2>
-            <p className="text-xl mb-8 text-blue-200 max-w-2xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-prestige-gold">Stay Informed</h2>
+            <p className="text-xl mb-8 text-brand-light max-w-2xl mx-auto">
               Subscribe to our newsletter for the latest insights, industry updates, and investigative tips.
             </p>
             <div className="max-w-md mx-auto flex gap-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#facc15]"
+                className="flex-1 px-4 py-3 rounded-lg text-prestige-black focus:outline-none focus:ring-2 focus:ring-prestige-gold"
               />
-              <button className="btn-secondary px-6 py-3">
+              <button className="bg-prestige-gold text-prestige-black px-6 py-3 rounded-lg font-semibold hover:bg-white transition-colors">
                 Subscribe
               </button>
             </div>
-            <p className="text-sm text-blue-200 mt-4">
+            <p className="text-sm text-brand-light mt-4">
               We respect your privacy. Unsubscribe at any time.
             </p>
           </div>

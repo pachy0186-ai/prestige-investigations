@@ -11,15 +11,17 @@ const config: Config = {
       colors: {
         prestige: {
           black: "#0A0A0A",
-          navy: "#0B2A6F",
           gold: "#FACC15",
           white: "#FFFFFF",
           paper: "#111111",
-          // Text colors for better contrast
-          'text-dark': "#1E293B",    // slate-800 for light backgrounds
-          'text-darker': "#0F172A",  // slate-900 for maximum contrast
-          'text-light': "#F8FAFC",   // slate-50 for dark backgrounds
-        }
+          gray: "#6B7280",
+        },
+        // Brand aliases for easier use
+        'prestige-black': "#0A0A0A",
+        'prestige-gold': "#FACC15",
+        'prestige-white': "#FFFFFF",
+        'prestige-gray': "#6B7280",
+        'brand-light': "#E5E7EB",
       },
       fontFamily: {
         'serif': ['Playfair Display', 'serif'],
