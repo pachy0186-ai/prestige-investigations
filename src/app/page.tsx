@@ -100,21 +100,39 @@ export default function Home() {
 
   const testimonials = [
     {
-      content: "Prestige Investigations helped us uncover employee theft that was costing our company thousands. Their professionalism and discretion were exceptional.",
-      name: "Sarah M.",
-      role: "Business Owner",
+      content: "Thank you so much for the case I presented to you and for your resolution. I will always keep it in mind and highly recommend it. They are truly the best in Miami. They performed excellently and with great responsibility.",
+      name: "Maritza Milian",
+      role: "Google Review",
       rating: 5
     },
     {
-      content: "I&apos;ve worked with many PI firms, but Prestige stands out for their thorough investigations and court-ready reports. Highly recommended.",
-      name: "Michael R.",
-      role: "Attorney", 
+      content: "It worth every dollar! They solve my problem with discretion and professionalism, now my family and myself can sleep quietly every night.",
+      name: "Luis Pinto",
+      role: "Google Review", 
       rating: 5
     },
     {
-      content: "Their tenant screening services have been invaluable. We&apos;ve avoided several problematic tenants thanks to their comprehensive background checks.",
-      name: "Jennifer L.",
-      role: "Property Manager",
+      content: "Amazing service, needed a background check and got it back within hours. They&apos;re the best in Miami.",
+      name: "Client Review",
+      role: "Google Review",
+      rating: 5
+    },
+    {
+      content: "This guy took care of my concern super quick. I will recommend him with my eyes closed.",
+      name: "Hugo Romo",
+      role: "Google Review",
+      rating: 5
+    },
+    {
+      content: "I called because of an issue I&apos;m dealing with & they were there to hear me out... I was given a few tips on how to go about moving forward with my problem... Will definitely recommend.",
+      name: "Joseph S",
+      role: "Google Review",
+      rating: 5
+    },
+    {
+      content: "100% recommended!! Thank you for going above and beyond.",
+      name: "Paola Avila",
+      role: "Google Review",
       rating: 5
     }
   ];
