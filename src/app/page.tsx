@@ -169,6 +169,40 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Welcome Video Section */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container max-w-6xl mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-brand-gold">
+                Welcome to Our Site!
+              </h2>
+              <p className="text-base md:text-lg text-brand-dark max-w-2xl mx-auto mb-8">
+                Get to know Prestige Executive Investigations and see how we can help you uncover the truth.
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl">
+                <video 
+                  controls 
+                  poster="/images/video-poster.jpg"
+                  className="w-full h-auto"
+                  preload="metadata"
+                >
+                  <source 
+                    src="https://video.wixstatic.com/video/9e22e3_8c3bc25510154d94a802eca561fd08e2/480p/mp4/file.mp4" 
+                    type="video/mp4" 
+                  />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded text-sm">
+                  At Prestige Executive Investigations
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services Preview */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
