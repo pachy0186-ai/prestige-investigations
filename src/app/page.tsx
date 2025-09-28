@@ -178,13 +178,13 @@ export default function Home() {
         </section>
 
         {/* Welcome Video Section */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-prestige-black">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-brand-gold">
                 Welcome to Our Site!
               </h2>
-              <p className="text-base md:text-lg text-brand-dark max-w-2xl mx-auto mb-8">
+              <p className="text-base md:text-lg text-brand-light max-w-2xl mx-auto mb-8">
                 Get to know Prestige Executive Investigations and see how we can help you uncover the truth.
               </p>
             </div>
@@ -212,30 +212,30 @@ export default function Home() {
         </section>
 
         {/* Services Preview */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-prestige-paper">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-brand-navy">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white">
                 Professional Investigative Services
               </h2>
-              <p className="text-base md:text-lg text-brand-dark max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-brand-light max-w-2xl mx-auto">
                 Comprehensive investigative solutions tailored to your specific needs
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {featuredServices.map((service, index) => (
-                <div key={index} className="card-light group">
+                <div key={index} className="card-dark group">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-brand-gold/10 rounded-full text-brand-gold">
+                    <div className="p-3 bg-brand-gold/20 rounded-full text-brand-gold">
                       {service.icon}
                     </div>
-                    <h3 className="text-lg font-semibold text-brand-navy">{service.title}</h3>
+                    <h3 className="text-lg font-semibold text-white">{service.title}</h3>
                   </div>
-                  <p className="text-base text-brand-dark mb-4">{service.description}</p>
+                  <p className="text-base text-brand-light mb-4">{service.description}</p>
                   <a 
                     href={service.link}
-                    className="text-brand-gold hover:text-brand-navy font-medium flex items-center gap-2 transition-colors"
+                    className="text-brand-gold hover:text-white font-medium flex items-center gap-2 transition-colors"
                   >
                     Learn more <ArrowRight className="w-4 h-4" />
                   </a>
@@ -278,29 +278,29 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-prestige-paper">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-brand-navy">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white">
                 What Our Clients Say
               </h2>
-              <p className="text-base md:text-lg text-brand-dark">
+              <p className="text-base md:text-lg text-brand-light">
                 Trusted by individuals and businesses across South Florida
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="card-light">
+                <div key={index} className="card-dark">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-brand-gold fill-current" />
                     ))}
                   </div>
-                  <p className="text-base text-brand-dark mb-4 italic">&quot;{testimonial.content}&quot;</p>
+                  <p className="text-base text-brand-light mb-4 italic">&quot;{testimonial.content}&quot;</p>
                   <div>
-                    <p className="font-semibold text-brand-navy">{testimonial.name}</p>
-                    <p className="text-gray-700 text-sm">{testimonial.role}</p>
+                    <p className="font-semibold text-white">{testimonial.name}</p>
+                    <p className="text-brand-light text-sm">{testimonial.role}</p>
                   </div>
                 </div>
               ))}
