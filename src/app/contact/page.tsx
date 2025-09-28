@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import Button from '@/components/Button';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -34,6 +34,15 @@ export default function Contact() {
     'Other'
   ];
 
+  // Pre-select service from URL parameter
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
+    if (serviceParam && services.includes(serviceParam)) {
+      setFormData(prev => ({ ...prev, service: serviceParam }));
+    }
+  }, []);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -46,12 +55,9 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission (replace with actual form handler)
     try {
-      console.log('Form submitted:', formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Simulate form submission (replace with actual form handler like Formspree)
+      await new Promise(resolve => setTimeout(resolve, 2000));
       
       setSubmitStatus('success');
       setFormData({
@@ -61,11 +67,10 @@ export default function Contact() {
         service: '',
         message: ''
       });
-    } catch {
+    } catch (error) {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 5000);
     }
   };
 
@@ -73,109 +78,58 @@ export default function Contact() {
     <>
       <Navigation />
       
-      <main>
+      <main id="main-content">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#0b2a6f] to-[#1e40af] text-white py-20">
-          <div className="container mx-auto px-4">
+        <section className="bg-prestige-black text-white py-20">
+          <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
-              <p className="text-xl text-blue-200">
-                Ready to get started? Contact us today for a confidential consultation.
+              <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-6">
+                Request a Free <span className="text-prestige-gold">Consultation</span>
+              </h1>
+              <p className="text-xl text-gray-200 leading-relaxed">
+                Ready to get started? Contact us today for a confidential consultation. 
+                We&apos;re here to help you uncover the truth and protect your interests.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Contact Information */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
+        {/* Contact Form & Info */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Info */}
-              <div>
-                <h2 className="text-3xl font-bold mb-8 text-[#0b2a6f]">Get In Touch</h2>
-                <p className="text-lg text-gray-700 mb-8">
-                  We&apos;re here to help you with all your investigative needs. Contact us today to discuss 
-                  your case and learn how we can assist you in uncovering the truth.
-                </p>
-
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-[#0b2a6f] rounded-full flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-[#facc15]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                      <a href="tel:786-556-3313" className="text-[#0b2a6f] hover:text-[#facc15] transition-colors">
-                        786-556-3313
-                      </a>
-                      <p className="text-gray-600 text-sm">Available 24/7 for urgent matters</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-[#0b2a6f] rounded-full flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-[#facc15]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1">Email</h3>
-                      <a href="mailto:Prestigeinvestigations@outlook.com" className="text-[#0b2a6f] hover:text-[#facc15] transition-colors">
-                        Prestigeinvestigations@outlook.com
-                      </a>
-                      <p className="text-gray-600 text-sm">We respond within 24 hours</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-[#0b2a6f] rounded-full flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-[#facc15]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1">Service Area</h3>
-                      <p className="text-gray-700">South Florida</p>
-                      <p className="text-gray-600 text-sm">Licensed throughout Florida</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-[#0b2a6f] rounded-full flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-[#facc15]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1">Business Hours</h3>
-                      <p className="text-gray-700">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p className="text-gray-700">Saturday: 9:00 AM - 4:00 PM</p>
-                      <p className="text-gray-600 text-sm">Emergency services available 24/7</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 p-6 bg-[#0b2a6f] rounded-lg text-white">
-                  <h3 className="text-lg font-semibold mb-2 text-[#facc15]">Licensed Professional</h3>
-                  <p className="text-sm">Florida Private Investigator License #A1700257</p>
-                  <p className="text-sm text-blue-200">Fully licensed, bonded, and insured</p>
-                </div>
-              </div>
-
               {/* Contact Form */}
               <div>
-                <h2 className="text-3xl font-bold mb-8 text-[#0b2a6f]">Send Us a Message</h2>
-                
+                <h2 className="text-3xl font-serif font-bold mb-6 text-prestige-black">
+                  Get In Touch
+                </h2>
+                <p className="text-lg text-prestige-gray mb-8">
+                  Fill out the form below and we&apos;ll get back to you within 24 hours. 
+                  All consultations are completely confidential.
+                </p>
+
                 {submitStatus === 'success' && (
-                  <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-                    Thank you for your message! We&apos;ll get back to you within 24 hours.
+                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <p className="text-green-800">
+                      Thank you! Your message has been sent successfully. We&apos;ll contact you soon.
+                    </p>
                   </div>
                 )}
 
                 {submitStatus === 'error' && (
-                  <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-                    There was an error sending your message. Please try again or call us directly.
+                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
+                    <AlertCircle className="w-5 h-5 text-red-600" />
+                    <p className="text-red-800">
+                      Sorry, there was an error sending your message. Please try again or call us directly.
+                    </p>
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-semibold text-prestige-black mb-2">
                         Full Name *
                       </label>
                       <input
@@ -185,12 +139,12 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0b2a6f] focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-prestige-gold focus:border-prestige-gold transition-colors"
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-semibold text-prestige-black mb-2">
                         Email Address *
                       </label>
                       <input
@@ -200,15 +154,15 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0b2a6f] focus:border-transparent"
-                        placeholder="your.email@example.com"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-prestige-gold focus:border-prestige-gold transition-colors"
+                        placeholder="your@email.com"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="phone" className="block text-sm font-semibold text-prestige-black mb-2">
                         Phone Number
                       </label>
                       <input
@@ -217,12 +171,12 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0b2a6f] focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-prestige-gold focus:border-prestige-gold transition-colors"
                         placeholder="(555) 123-4567"
                       />
                     </div>
                     <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="service" className="block text-sm font-semibold text-prestige-black mb-2">
                         Service Needed
                       </label>
                       <select
@@ -230,7 +184,7 @@ export default function Contact() {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0b2a6f] focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-prestige-gold focus:border-prestige-gold transition-colors"
                       >
                         <option value="">Select a service</option>
                         {services.map((service) => (
@@ -243,7 +197,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-prestige-black mb-2">
                       Message *
                     </label>
                     <textarea
@@ -253,50 +207,133 @@ export default function Contact() {
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0b2a6f] focus:border-transparent"
-                      placeholder="Please describe your situation and how we can help you..."
-                    ></textarea>
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-prestige-gold focus:border-prestige-gold transition-colors resize-vertical"
+                      placeholder="Please describe your situation and how we can help..."
+                    />
                   </div>
 
-                  <button
+                  <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full btn-primary text-lg py-4 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full"
+                    size="lg"
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                        <span>Sending...</span>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-prestige-black mr-2"></div>
+                        Sending...
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5" />
-                        <span>Send Message</span>
+                        <Send className="w-5 h-5 mr-2" />
+                        Send Message
                       </>
                     )}
-                  </button>
+                  </Button>
                 </form>
+              </div>
 
-                <p className="text-sm text-gray-600 mt-4">
-                  * Required fields. All information is kept strictly confidential.
-                </p>
+              {/* Contact Information */}
+              <div>
+                <h2 className="text-3xl font-serif font-bold mb-6 text-prestige-black">
+                  Contact Information
+                </h2>
+                
+                <div className="space-y-6 mb-8">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-prestige-gold/10 rounded-full">
+                      <Phone className="w-6 h-6 text-prestige-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-prestige-black mb-1">Phone</h3>
+                      <a 
+                        href="tel:786-556-3313" 
+                        className="text-lg text-prestige-gold hover:text-prestige-black transition-colors"
+                      >
+                        786-556-3313
+                      </a>
+                      <p className="text-sm text-prestige-gray">24/7 Emergency Services Available</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-prestige-gold/10 rounded-full">
+                      <Mail className="w-6 h-6 text-prestige-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-prestige-black mb-1">Email</h3>
+                      <a 
+                        href="mailto:Prestigeinvestigations@outlook.com" 
+                        className="text-lg text-prestige-gold hover:text-prestige-black transition-colors break-all"
+                      >
+                        Prestigeinvestigations@outlook.com
+                      </a>
+                      <p className="text-sm text-prestige-gray">We respond within 24 hours</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-prestige-gold/10 rounded-full">
+                      <MapPin className="w-6 h-6 text-prestige-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-prestige-black mb-1">Service Area</h3>
+                      <p className="text-lg text-prestige-gray">South Florida</p>
+                      <p className="text-sm text-prestige-gray">Miami-Dade, Broward, Palm Beach Counties</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-prestige-gold/10 rounded-full">
+                      <Clock className="w-6 h-6 text-prestige-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-prestige-black mb-1">Business Hours</h3>
+                      <div className="text-prestige-gray">
+                        <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+                        <p>Saturday: 9:00 AM - 6:00 PM</p>
+                        <p>Sunday: Emergency Services Only</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* License Information */}
+                <div className="bg-prestige-paper p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold text-prestige-gold mb-4">
+                    Licensed Professional
+                  </h3>
+                  <p className="text-white mb-2">
+                    <strong>Florida Private Investigator License #A1700257</strong>
+                  </p>
+                  <p className="text-gray-300 text-sm">
+                    Licensed, bonded, and insured. All investigations conducted within legal boundaries 
+                    with complete confidentiality and court-ready documentation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Emergency Contact */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-[#0b2a6f]">Need Immediate Assistance?</h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              For urgent matters that require immediate attention, don&apos;t hesitate to call us directly. 
-              We understand that some situations can&apos;t wait.
+        <section className="py-16 bg-prestige-black text-white">
+          <div className="container max-w-6xl mx-auto px-4 md:px-6 text-center">
+            <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-6">
+              Need Immediate Assistance?
+            </h2>
+            <p className="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+              For urgent matters requiring immediate attention, call us directly. 
+              We provide 24/7 emergency investigative services.
             </p>
-            <a href="tel:786-556-3313" className="btn-primary text-xl px-10 py-4 inline-flex items-center space-x-2">
-              <Phone className="w-6 h-6" />
-              <span>Call Now: 786-556-3313</span>
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="tel:786-556-3313" size="lg">
+                Call Now: 786-556-3313
+              </Button>
+              <Button href="mailto:Prestigeinvestigations@outlook.com" variant="secondary" size="lg">
+                Send Email
+              </Button>
+            </div>
           </div>
         </section>
       </main>

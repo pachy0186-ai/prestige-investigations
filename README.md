@@ -1,254 +1,337 @@
 # Prestige Executive Investigations LLC - Website
 
-A modern, mobile-responsive website for Prestige Executive Investigations LLC built with Next.js, Tailwind CSS, and TypeScript.
+A modern, professional website for Prestige Executive Investigations LLC built with Next.js 15, Tailwind CSS, and TypeScript. Features authentic black and gold branding, responsive design, and comprehensive investigative services showcase.
 
-## 🌐 Live Website
+## 🚀 Live Website
 
-The website is deployed and accessible at: [Your Deployment URL]
+**Production URL:** [https://prestige-investigations.vercel.app](https://prestige-investigations.vercel.app)
 
-## 📋 Project Overview
+## 🛠️ Tech Stack
 
-This website showcases the professional investigative services offered by Prestige Executive Investigations LLC, a licensed private investigation firm based in South Florida (License #A1700257).
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS
+- **Language:** TypeScript
+- **Icons:** Lucide React
+- **Fonts:** Playfair Display (headings), Inter (body)
+- **Deployment:** Vercel
+- **Version Control:** GitHub
 
-### Key Features
+## 🎨 Brand Identity
 
-- **Modern Design**: Clean, professional design with responsive layout
-- **Complete Service Portfolio**: 13 comprehensive investigative services
-- **Contact Integration**: Direct phone and email contact with functional contact form
-- **SEO Optimized**: Proper meta tags and structured content for search engines
-- **Mobile Responsive**: Optimized for all device sizes
-- **Professional Branding**: Company colors (Dark Blue #0B2A6F, Yellow #FACC15)
+### Color Palette
+```css
+/* Prestige Executive Investigations Brand Colors */
+prestige-black: #0A0A0A    /* Primary dark background */
+prestige-gold: #F5C518     /* Primary accent color */
+prestige-gray: #6B7280     /* Text and support elements */
+prestige-white: #FFFFFF    /* Clean sections and text */
+prestige-paper: #111111    /* Dark section backgrounds */
+```
 
-## 🛠 Technology Stack
+### Typography
+- **Headings:** Playfair Display (serif) - Authoritative and professional
+- **Body Text:** Inter (sans-serif) - Clean and readable
+- **UI Elements:** Inter (sans-serif) - Consistent interface
 
-- **Framework**: Next.js 15 (App Router)
-- **Styling**: Tailwind CSS
-- **Language**: TypeScript
-- **Icons**: Lucide React
-- **Deployment**: Static Export for universal hosting
+### Design Principles
+- **Professional Authority:** Black and gold convey trust and expertise
+- **Clean Hierarchy:** Clear information architecture
+- **Mobile-First:** Responsive design for all devices
+- **Accessibility:** WCAG AA compliant color contrast and navigation
 
 ## 📁 Project Structure
 
 ```
 src/
-├── app/
-│   ├── about/page.tsx          # About page
-│   ├── blog/page.tsx           # Blog/Resources page
-│   ├── contact/page.tsx        # Contact page with form
-│   ├── faq/page.tsx            # FAQ page
-│   ├── services/page.tsx       # Services overview
-│   ├── globals.css             # Global styles
-│   ├── layout.tsx              # Root layout
-│   └── page.tsx                # Home page
-├── components/
-│   ├── Navigation.tsx          # Main navigation component
-│   └── Footer.tsx              # Footer component
-public/
-├── images/
-│   └── prestige_banner.webp    # Company banner/logo
-└── [other static assets]
+├── app/                    # Next.js App Router pages
+│   ├── about/             # About page
+│   ├── blog/              # Blog listing page
+│   ├── contact/           # Contact form page
+│   ├── faq/               # FAQ accordion page
+│   ├── services/          # Services grid page
+│   ├── globals.css        # Global styles and brand CSS
+│   ├── layout.tsx         # Root layout with fonts and metadata
+│   └── page.tsx           # Home page
+├── components/            # Reusable React components
+│   ├── Button.tsx         # Branded button component
+│   ├── Footer.tsx         # Site footer with contact info
+│   ├── Navigation.tsx     # Header navigation with mobile menu
+│   └── TopBar.tsx         # Contact strip with phone/email/license
+└── public/
+    └── images/            # Static assets (logo, banner, etc.)
 ```
 
-## 🚀 Getting Started
+## 🔧 Development Setup
 
 ### Prerequisites
-
 - Node.js 18+ 
 - npm or yarn
+- Git
 
 ### Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/[username]/prestige-investigations.git
+# Clone the repository
+git clone https://github.com/pachy0186-ai/prestige-investigations.git
 cd prestige-investigations
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Run the development server:
-```bash
+# Start development server
 npm run dev
+
+# Open http://localhost:3000 in your browser
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+### Build Commands
+```bash
+# Development server
+npm run dev
 
-## 📝 Content Management
+# Production build
+npm run build
 
-### Editing Text Content
+# Start production server
+npm start
 
-Most text content can be found in the respective page files:
+# Lint code
+npm run lint
+```
 
-- **Home Page**: `src/app/page.tsx`
-- **About Page**: `src/app/about/page.tsx`
-- **Services**: `src/app/services/page.tsx`
-- **Contact Info**: `src/components/Navigation.tsx` and `src/components/Footer.tsx`
+## ✏️ Content Management
 
-### Adding Blog Posts
+### Updating Text Content
 
-To add new blog posts, edit the `blogPosts` array in `src/app/blog/page.tsx`:
+#### Company Information
+Edit contact details in multiple locations:
+- `src/components/TopBar.tsx` - Header contact strip
+- `src/components/Footer.tsx` - Footer contact section
+- `src/app/contact/page.tsx` - Contact page details
 
+#### Services
+Update services in `src/app/services/page.tsx`:
 ```typescript
-const blogPosts = [
+const services = [
   {
-    title: "Your Blog Post Title",
-    excerpt: "Brief description of the post...",
-    date: "2024-01-15",
-    author: "Author Name",
-    category: "Category",
-    slug: "url-friendly-slug"
-  },
-  // ... other posts
+    icon: <FileText className="w-8 h-8" />,
+    title: "Service Name",
+    description: "Service description...",
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    id: "service-slug"
+  }
+  // Add more services...
 ];
 ```
 
-### Updating Services
-
-Services are defined in the `services` array in `src/app/services/page.tsx`. Each service includes:
-
-- Icon (from Lucide React)
-- Title
-- Description
-- Features list
-
-### Modifying Contact Information
-
-Update contact details in:
-- `src/components/Navigation.tsx` (top bar)
-- `src/components/Footer.tsx` (footer section)
-- `src/app/contact/page.tsx` (contact page)
-
-## 🎨 Styling and Branding
-
-### Color Scheme
-
-The website uses a professional color palette:
-
-- **Primary Blue**: `#0b2a6f`
-- **Secondary Yellow**: `#facc15`
-- **Text Gray**: `#1f2937`
-- **Background**: `#ffffff`
-
-### Fonts
-
-- **Primary Font**: Inter (Google Fonts)
-- **Fallback**: System fonts (system-ui, sans-serif)
-
-### Customizing Styles
-
-Global styles are in `src/app/globals.css`. Component-specific styles use Tailwind CSS classes.
-
-## 📱 Responsive Design
-
-The website is fully responsive with breakpoints:
-
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px  
-- **Desktop**: > 1024px
-
-## 🔧 Build and Deployment
-
-### Building for Production
-
-```bash
-npm run build
+#### Testimonials
+Update testimonials in `src/app/page.tsx`:
+```typescript
+const testimonials = [
+  {
+    content: "Testimonial text...",
+    name: "Client Name",
+    role: "Client Role",
+    rating: 5
+  }
+  // Add more testimonials...
+];
 ```
 
-This creates an optimized static export in the `out/` directory.
+### Adding Images
 
-### Deployment Options
+1. **Add images to:** `public/images/`
+2. **Use Next.js Image component:**
+```tsx
+import Image from 'next/image';
 
-The website is configured for static export and can be deployed to:
+<Image
+  src="/images/your-image.jpg"
+  alt="Descriptive alt text"
+  width={800}
+  height={600}
+  className="rounded-lg"
+/>
+```
 
-- **Vercel** (recommended)
-- **Netlify**
-- **GitHub Pages**
-- **Any static hosting service**
+3. **Optimize images:** Use WebP format when possible for better performance
 
-### Vercel Deployment
+### Blog Posts
 
-1. Connect your GitHub repository to Vercel
-2. Vercel will automatically detect Next.js and deploy
-3. The site will be available at `https://[project-name].vercel.app`
+#### Adding a New Blog Post
+1. Create new file: `src/app/blog/[slug]/page.tsx`
+2. Add metadata and content:
+```tsx
+export const metadata = {
+  title: 'Post Title | Prestige Executive Investigations',
+  description: 'Post description...'
+};
 
-### Manual Deployment
+export default function BlogPost() {
+  return (
+    <article>
+      <h1>Post Title</h1>
+      <p>Post content...</p>
+    </article>
+  );
+}
+```
 
-1. Build the project: `npm run build`
-2. Upload the `out/` directory to your hosting provider
-3. Configure your domain to point to the uploaded files
+3. Update blog listing in `src/app/blog/page.tsx`
 
-## 📊 SEO and Performance
+## 🎨 Customizing Brand Colors
+
+### Method 1: Tailwind Config
+Edit `tailwind.config.ts`:
+```typescript
+colors: {
+  prestige: {
+    black: "#0A0A0A",    // Change primary dark color
+    gold: "#F5C518",     // Change accent color
+    gray: "#6B7280",     // Change text color
+    white: "#FFFFFF",    // Change light color
+    paper: "#111111"     // Change dark section color
+  }
+}
+```
+
+### Method 2: CSS Variables
+Edit `src/app/globals.css`:
+```css
+:root {
+  --prestige-black: #0A0A0A;
+  --prestige-gold: #F5C518;
+  --prestige-gray: #6B7280;
+  /* Update other colors... */
+}
+```
+
+### After Color Changes
+1. Restart development server: `npm run dev`
+2. Test all pages for proper color application
+3. Verify accessibility contrast ratios
+
+## 🚀 Deployment
+
+### Automatic Deployment (Recommended)
+The site automatically deploys to Vercel when changes are pushed to the `main` branch.
+
+### Manual Deployment Steps
+1. **Commit changes:**
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main
+```
+
+2. **Vercel will automatically:**
+   - Build the project
+   - Run tests and linting
+   - Deploy to production
+   - Update the live URL
+
+### Custom Domain Setup
+1. Go to Vercel dashboard
+2. Select the project
+3. Go to Settings > Domains
+4. Add your custom domain
+5. Update DNS records as instructed
+
+## 📊 Performance & SEO
+
+### Lighthouse Targets
+- **Performance:** ≥ 90
+- **Accessibility:** ≥ 90  
+- **Best Practices:** ≥ 90
+- **SEO:** ≥ 90
 
 ### SEO Features
-
-- Semantic HTML structure
-- Meta tags for each page
-- Proper heading hierarchy
-- Alt text for images
-- Structured data ready
+- **Meta tags:** Unique title/description per page
+- **Open Graph:** Social media sharing optimization
+- **Structured data:** Business information markup
+- **Sitemap:** Automatic generation
+- **Mobile-friendly:** Responsive design
 
 ### Performance Optimizations
+- **Next.js Image:** Automatic image optimization
+- **Static generation:** Pre-rendered pages
+- **Code splitting:** Automatic bundle optimization
+- **Font optimization:** Google Fonts with display swap
 
-- Static site generation
-- Optimized images
-- Minimal JavaScript bundle
-- CSS optimization
-- Fast loading times
+## 🔒 Security & Privacy
 
-## 🔒 Security and Privacy
+### Contact Form Security
+- **Client-side validation:** Input sanitization
+- **Rate limiting:** Prevent spam submissions
+- **HTTPS only:** Secure data transmission
+- **No data storage:** Forms can integrate with secure services
 
-- No sensitive data stored in the repository
-- Contact form data handling (implement server-side processing as needed)
-- HTTPS ready
-- No tracking scripts (add as needed)
+### Privacy Compliance
+- **No tracking:** No analytics by default
+- **Secure forms:** Ready for GDPR compliance
+- **Contact data:** Handled securely
 
-## 📞 Support and Maintenance
+## 🛠️ Maintenance
 
 ### Regular Updates
+1. **Dependencies:** Update monthly
+```bash
+npm update
+npm audit fix
+```
 
-1. **Content Updates**: Edit page files and redeploy
-2. **Security Updates**: Keep dependencies updated with `npm update`
-3. **Feature Additions**: Follow the existing code structure
+2. **Content:** Review and update quarterly
+   - Services descriptions
+   - Contact information
+   - Testimonials
+   - Blog posts
+
+3. **Performance:** Monitor monthly
+   - Lighthouse scores
+   - Page load times
+   - Mobile usability
 
 ### Troubleshooting
 
-**Build Errors**: Check the console output and ensure all dependencies are installed.
+#### Build Errors
+```bash
+# Clear Next.js cache
+rm -rf .next
 
-**Styling Issues**: Verify Tailwind classes and check for conflicts in `globals.css`.
+# Reinstall dependencies
+rm -rf node_modules package-lock.json
+npm install
 
-**Deployment Issues**: Ensure the `out/` directory is properly generated and uploaded.
+# Rebuild
+npm run build
+```
 
-## 📄 License Information
+#### ESLint Errors
+```bash
+# Fix auto-fixable issues
+npm run lint -- --fix
 
-This website is built for Prestige Executive Investigations LLC.
+# Check specific files
+npx eslint src/app/page.tsx
+```
 
-**Company Details:**
-- Licensed Private Investigator
-- Florida License #A1700257
-- Phone: 786-556-3313
-- Email: Prestigeinvestigations@outlook.com
-- Service Area: South Florida
+## 📞 Support
 
-## 🤝 Contributing
+### Technical Issues
+- **Repository:** [GitHub Issues](https://github.com/pachy0186-ai/prestige-investigations/issues)
+- **Documentation:** This README file
+- **Framework:** [Next.js Documentation](https://nextjs.org/docs)
 
-For updates or modifications:
+### Content Updates
+- **Contact:** Prestigeinvestigations@outlook.com
+- **Phone:** 786-556-3313
+- **License:** Florida PI License #A1700257
 
-1. Create a new branch for your changes
-2. Test thoroughly in development
-3. Submit changes for review
-4. Deploy to production after approval
+## 📄 License
 
-## 📞 Contact
-
-For technical support or questions about this website:
-
-**Prestige Executive Investigations LLC**
-- Phone: 786-556-3313
-- Email: Prestigeinvestigations@outlook.com
+This website is proprietary to Prestige Executive Investigations LLC. All rights reserved.
 
 ---
 
-*Built with ❤️ using Next.js and Tailwind CSS*
+**Last Updated:** September 2025  
+**Version:** 2.0.0  
+**Maintained by:** Prestige Executive Investigations LLC
