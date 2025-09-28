@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 html, body {
-  background: #FFFFFF;
-  color: #1E293B;
+  background: #0A0A0A;
+  color: #F8FAFC;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -127,14 +127,27 @@ a:hover {
 }
 
 .card-light {
-  background: #FFFFFF;
-  color: #1E293B;
-  border: 1px solid #E2E8F0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #F8FAFC;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 .card-light:hover {
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.card-dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: #F8FAFC;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.card-dark:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
 /* Typography classes for consistent branding */
