@@ -188,7 +188,7 @@ export default function Home() {
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mt-4">
                 At Prestige Investigations, we understand that your safety, security, and peace of mind are important. 
-                Whether you're an individual looking for personal services or a business in need of corporate investigations, 
+                Whether you&apos;re an individual looking for personal services or a business in need of corporate investigations, 
                 we are here to help.
               </p>
             </div>
@@ -238,7 +238,7 @@ export default function Home() {
                       <Star key={i} className="w-5 h-5 text-[#facc15] fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.content}"</p>
+                  <p className="text-gray-700 mb-4 italic">&quot;{testimonial.content}&quot;</p>
                   <div>
                     <p className="font-semibold text-[#0b2a6f]">{testimonial.name}</p>
                     <p className="text-gray-600 text-sm">{testimonial.role}</p>
@@ -254,7 +254,7 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-xl mb-8 text-blue-200 max-w-2xl mx-auto">
-              Contact us today for a confidential consultation. We're here to help you uncover the truth 
+              Contact us today for a confidential consultation. We&apos;re here to help you uncover the truth 
               and protect your interests.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

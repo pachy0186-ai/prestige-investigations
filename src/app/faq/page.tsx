@@ -138,8 +138,8 @@ export default function FAQ() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6 text-[#0b2a6f]">Still Have Questions?</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              If you don't see your question answered here, don't hesitate to contact us. 
-              We're here to help and provide you with the information you need.
+              If you don&apos;t see your question answered here, don&apos;t hesitate to contact us. 
+              We&apos;re here to help and provide you with the information you need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:786-556-3313" className="btn-primary text-lg px-8 py-4">

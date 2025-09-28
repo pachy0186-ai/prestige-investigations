@@ -168,7 +168,7 @@ export default function Blog() {
             <div className="max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-[#0b2a6f]">More Content Coming Soon</h3>
               <p className="text-gray-700 mb-6">
-                We're working on bringing you more valuable insights and resources. 
+                We&apos;re working on bringing you more valuable insights and resources. 
                 Check back regularly for new articles and updates from our investigative experts.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
