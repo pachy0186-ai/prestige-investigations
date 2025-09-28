@@ -133,38 +133,38 @@ export default function Services() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-prestige-black">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-brand-navy">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white">
                 Our Services
               </h2>
-              <p className="text-base md:text-lg text-brand-dark max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-brand-light max-w-2xl mx-auto">
                 From background checks to complex investigations, we provide the expertise you need
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div key={index} id={service.id} className="card-light group">
+                <div key={index} id={service.id} className="card-dark group">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="p-4 bg-prestige-gold/10 rounded-full text-prestige-gold">
+                    <div className="p-4 bg-prestige-gold/20 rounded-full text-prestige-gold">
                       {service.icon}
                     </div>
-                    <h3 className="text-xl font-semibold text-prestige-black">{service.title}</h3>
+                    <h3 className="text-xl font-semibold text-white">{service.title}</h3>
                   </div>
                   
-                  <p className="text-prestige-gray mb-6 leading-relaxed">
+                  <p className="text-brand-light mb-6 leading-relaxed">
                     {service.description}
                   </p>
                   
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-prestige-black mb-3 uppercase tracking-wide">
+                    <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wide">
                       What&apos;s Included:
                     </h4>
                     <ul className="space-y-2">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2 text-sm text-prestige-gray">
+                        <li key={featureIndex} className="flex items-center gap-2 text-sm text-brand-light">
                           <div className="w-1.5 h-1.5 bg-prestige-gold rounded-full flex-shrink-0"></div>
                           {feature}
                         </li>

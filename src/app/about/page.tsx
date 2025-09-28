@@ -25,12 +25,12 @@ export default function About() {
         </section>
 
         {/* Mission Section */}
-        <section className="py-16">
+        <section className="py-16 bg-prestige-black">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-[#0b2a6f]">Our Mission</h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">Our Mission</h2>
+                <p className="text-lg text-brand-light leading-relaxed">
                   At Prestige Executive Investigations LLC, our mission is to provide professional, confidential, 
                   and thorough investigative services that help our clients uncover the truth and protect their interests. 
                   We are committed to maintaining the highest standards of integrity, discretion, and professionalism 
@@ -40,18 +40,18 @@ export default function About() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-[#0b2a6f]">Who We Are</h3>
-                  <p className="text-gray-700 mb-4">
+                  <h3 className="text-2xl font-bold mb-4 text-white">Who We Are</h3>
+                  <p className="text-brand-light mb-4">
                     Prestige Executive Investigations LLC is a licensed private investigation firm based in South Florida. 
                     We specialize in a comprehensive range of investigative services for individuals, businesses, 
                     attorneys, and organizations throughout the region.
                   </p>
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-brand-light mb-4">
                     Our team brings years of experience in investigative work, with a deep understanding of both 
                     traditional investigation techniques and modern technology. We pride ourselves on our ability 
                     to handle sensitive matters with the utmost discretion and professionalism.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="text-brand-light">
                     Whether you need background checks, surveillance, corporate investigations, or specialized 
                     services like executive protection, we have the expertise and resources to deliver results.
                   </p>
@@ -62,8 +62,8 @@ export default function About() {
                       <Shield className="w-6 h-6 text-[#facc15]" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-2">Licensed & Professional</h4>
-                      <p className="text-gray-600">Florida License #A1700257 - fully licensed and insured</p>
+                      <h4 className="text-lg font-semibold mb-2 text-white">Licensed & Professional</h4>
+                      <p className="text-brand-light">Florida License #A1700257 - fully licensed and insured</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -71,8 +71,8 @@ export default function About() {
                       <Award className="w-6 h-6 text-[#facc15]" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-2">Experienced Team</h4>
-                      <p className="text-gray-600">Years of investigative expertise across multiple disciplines</p>
+                      <h4 className="text-lg font-semibold mb-2 text-white">Experienced Team</h4>
+                      <p className="text-brand-light">Years of investigative expertise across multiple disciplines</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -80,8 +80,8 @@ export default function About() {
                       <Users className="w-6 h-6 text-[#facc15]" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-2">Client-Focused</h4>
-                      <p className="text-gray-600">Dedicated to understanding and meeting your specific needs</p>
+                      <h4 className="text-lg font-semibold mb-2 text-white">Client-Focused</h4>
+                      <p className="text-brand-light">Dedicated to understanding and meeting your specific needs</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -89,8 +89,8 @@ export default function About() {
                       <CheckCircle className="w-6 h-6 text-[#facc15]" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-2">Confidential Service</h4>
-                      <p className="text-gray-600">Complete discretion and confidentiality in all our work</p>
+                      <h4 className="text-lg font-semibold mb-2 text-white">Confidential Service</h4>
+                      <p className="text-brand-light">Complete discretion and confidentiality in all our work</p>
                     </div>
                   </div>
                 </div>
