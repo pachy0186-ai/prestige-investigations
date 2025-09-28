@@ -125,13 +125,21 @@ export default function Home() {
       
       <main id="main-content">
         {/* Hero Section */}
-        <section className="relative bg-hero-pattern bg-cover bg-center">
-          <div className="absolute inset-0 bg-prestige-black/80"></div>
-          <div className="relative z-10 text-center py-24 md:py-36">
-            <div className="container max-w-6xl mx-auto px-4 md:px-6">
-              <h1 className="text-4xl md:text-6xl font-serif font-extrabold mb-6 animate-fade-in text-white">
-                Uncover the <span className="text-brand-gold">TRUTH</span>
-              </h1>
+        <section className="relative bg-prestige-black">
+          <div className="container max-w-6xl mx-auto px-4 md:px-6">
+            <div className="text-center py-16 md:py-24">
+              {/* Banner Image */}
+              <div className="mb-8">
+                <Image
+                  src="/images/prestige-banner.jpeg"
+                  alt="Prestige Executive Investigations - Uncover THE TRUTH"
+                  width={800}
+                  height={400}
+                  className="mx-auto max-w-full h-auto"
+                  priority
+                />
+              </div>
+              
               <p className="text-base md:text-lg text-brand-light max-w-3xl mx-auto mb-10 leading-relaxed animate-slide-up">
                 Discreet. Professional. Court-Ready. Your trusted partner in professional investigative services throughout South Florida. Licensed, experienced, and committed to delivering results.
               </p>
