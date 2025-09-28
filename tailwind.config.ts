@@ -11,20 +11,34 @@ const config: Config = {
       colors: {
         prestige: {
           black: "#0A0A0A",
-          gold: "#F5C518",
-          gray: "#6B7280",
+          navy: "#0B2A6F",
+          gold: "#FACC15",
           white: "#FFFFFF",
-          paper: "#111111"
+          paper: "#111111",
+          // Text colors for better contrast
+          'text-dark': "#1E293B",    // slate-800 for light backgrounds
+          'text-darker': "#0F172A",  // slate-900 for maximum contrast
+          'text-light': "#F8FAFC",   // slate-50 for dark backgrounds
         }
       },
       fontFamily: {
         'serif': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'sans-serif'],
       },
+      fontSize: {
+        'base': ['16px', '1.6'],
+        'lg': ['18px', '1.7'],
+        'xl': ['20px', '1.7'],
+        '2xl': ['24px', '1.4'],
+        '3xl': ['30px', '1.3'],
+        '4xl': ['36px', '1.2'],
+        '5xl': ['48px', '1.1'],
+        '6xl': ['60px', '1.0'],
+      },
       boxShadow: {
         card: "0 8px 24px rgba(0,0,0,0.12)",
-        'gold': '0 4px 14px 0 rgba(245, 197, 24, 0.25)',
-        'gold-lg': '0 10px 25px -3px rgba(245, 197, 24, 0.3)',
+        'gold': '0 4px 14px 0 rgba(250, 204, 21, 0.25)',
+        'gold-lg': '0 10px 25px -3px rgba(250, 204, 21, 0.3)',
       },
       backgroundImage: {
         'hero-pattern': "linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.8)), url('/images/prestige_banner.webp')",

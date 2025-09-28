@@ -121,10 +121,10 @@ export default function Services() {
         <section className="bg-prestige-black text-white py-20">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-6">
-                Professional <span className="text-prestige-gold">Investigative Services</span>
+              <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-6 text-white">
+                Professional <span className="text-brand-gold">Investigative Services</span>
               </h1>
-              <p className="text-xl text-gray-200 leading-relaxed">
+              <p className="text-base md:text-lg text-brand-light leading-relaxed">
                 Comprehensive investigative solutions tailored to your specific needs. 
                 Licensed, experienced, and committed to delivering court-ready results.
               </p>
@@ -136,10 +136,10 @@ export default function Services() {
         <section className="py-16 md:py-24 bg-white">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-prestige-black">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-brand-navy">
                 Our Services
               </h2>
-              <p className="text-lg text-prestige-gray max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-brand-dark max-w-2xl mx-auto">
                 From background checks to complex investigations, we provide the expertise you need
               </p>
             </div>
@@ -199,23 +199,23 @@ export default function Services() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-serif font-bold text-prestige-gold mb-4">01</div>
+                <div className="text-4xl font-serif font-bold text-brand-gold mb-4">01</div>
                 <h3 className="text-xl font-semibold mb-3 text-white">Initial Consultation</h3>
-                <p className="text-gray-300">
+                <p className="text-base text-brand-light">
                   We discuss your needs, objectives, and develop a customized investigation plan
                 </p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-serif font-bold text-prestige-gold mb-4">02</div>
+                <div className="text-4xl font-serif font-bold text-brand-gold mb-4">02</div>
                 <h3 className="text-xl font-semibold mb-3 text-white">Professional Investigation</h3>
-                <p className="text-gray-300">
+                <p className="text-base text-brand-light">
                   Our licensed investigators use legal methods and advanced techniques to gather evidence
                 </p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-serif font-bold text-prestige-gold mb-4">03</div>
+                <div className="text-4xl font-serif font-bold text-brand-gold mb-4">03</div>
                 <h3 className="text-xl font-semibold mb-3 text-white">Detailed Reporting</h3>
-                <p className="text-gray-300">
+                <p className="text-base text-brand-light">
                   You receive comprehensive, court-ready reports with actionable findings
                 </p>
               </div>
@@ -226,10 +226,10 @@ export default function Services() {
         {/* CTA Section */}
         <section className="py-16 bg-prestige-black text-white">
           <div className="container max-w-6xl mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-6">
+            <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-6 text-white">
               Need a Custom Investigation?
             </h2>
-            <p className="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg mb-8 text-brand-light max-w-2xl mx-auto">
               Don&apos;t see exactly what you need? We handle unique cases and custom investigations. 
               Contact us to discuss your specific requirements.
             </p>

@@ -129,10 +129,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-prestige-black/80"></div>
           <div className="relative z-10 text-center py-24 md:py-36">
             <div className="container max-w-6xl mx-auto px-4 md:px-6">
-              <h1 className="text-4xl md:text-6xl font-serif font-extrabold mb-6 animate-fade-in">
-                Uncover the <span className="text-prestige-gold">TRUTH</span>
+              <h1 className="text-4xl md:text-6xl font-serif font-extrabold mb-6 animate-fade-in text-white">
+                Uncover the <span className="text-brand-gold">TRUTH</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed animate-slide-up">
+              <p className="text-base md:text-lg text-brand-light max-w-3xl mx-auto mb-10 leading-relaxed animate-slide-up">
                 Discreet. Professional. Court-Ready. Your trusted partner in professional investigative services throughout South Florida. Licensed, experienced, and committed to delivering results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -143,7 +143,7 @@ export default function Home() {
                   Contact Us
                 </Button>
               </div>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-brand-light font-medium">
                 Licensed • Confidential • Court-Ready Reports
               </p>
             </div>
@@ -162,7 +162,7 @@ export default function Home() {
                     </div>
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-white">{point.title}</h3>
-                  <p className="text-gray-300">{point.description}</p>
+                  <p className="text-base text-brand-light">{point.description}</p>
                 </div>
               ))}
             </div>
@@ -173,10 +173,10 @@ export default function Home() {
         <section className="py-16 md:py-24 bg-white">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-prestige-black">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-brand-navy">
                 Professional Investigative Services
               </h2>
-              <p className="text-lg text-prestige-gray max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-brand-dark max-w-2xl mx-auto">
                 Comprehensive investigative solutions tailored to your specific needs
               </p>
             </div>
@@ -185,15 +185,15 @@ export default function Home() {
               {featuredServices.map((service, index) => (
                 <div key={index} className="card-light group">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-prestige-gold/10 rounded-full text-prestige-gold">
+                    <div className="p-3 bg-brand-gold/10 rounded-full text-brand-gold">
                       {service.icon}
                     </div>
-                    <h3 className="text-lg font-semibold text-prestige-black">{service.title}</h3>
+                    <h3 className="text-lg font-semibold text-brand-navy">{service.title}</h3>
                   </div>
-                  <p className="text-prestige-gray mb-4">{service.description}</p>
+                  <p className="text-base text-brand-dark mb-4">{service.description}</p>
                   <a 
                     href={service.link}
-                    className="text-prestige-gold hover:text-prestige-black font-medium flex items-center gap-2 transition-colors"
+                    className="text-brand-gold hover:text-brand-navy font-medium flex items-center gap-2 transition-colors"
                   >
                     Learn more <ArrowRight className="w-4 h-4" />
                   </a>
@@ -216,7 +216,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white">
                 Our Process
               </h2>
-              <p className="text-lg text-gray-300">
+              <p className="text-base md:text-lg text-brand-light">
                 Simple, professional, and effective
               </p>
             </div>
@@ -224,11 +224,11 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl font-serif font-bold text-prestige-gold mb-4">
+                  <div className="text-4xl font-serif font-bold text-brand-gold mb-4">
                     {step.number}
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-white">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
+                  <p className="text-base text-brand-light">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -239,10 +239,10 @@ export default function Home() {
         <section className="py-16 md:py-24 bg-white">
           <div className="container max-w-6xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-prestige-black">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-brand-navy">
                 What Our Clients Say
               </h2>
-              <p className="text-lg text-prestige-gray">
+              <p className="text-base md:text-lg text-brand-dark">
                 Trusted by individuals and businesses across South Florida
               </p>
             </div>
@@ -252,13 +252,13 @@ export default function Home() {
                 <div key={index} className="card-light">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-prestige-gold fill-current" />
+                      <Star key={i} className="w-5 h-5 text-brand-gold fill-current" />
                     ))}
                   </div>
-                  <p className="text-prestige-gray mb-4 italic">&quot;{testimonial.content}&quot;</p>
+                  <p className="text-base text-brand-dark mb-4 italic">&quot;{testimonial.content}&quot;</p>
                   <div>
-                    <p className="font-semibold text-prestige-black">{testimonial.name}</p>
-                    <p className="text-prestige-gray text-sm">{testimonial.role}</p>
+                    <p className="font-semibold text-brand-navy">{testimonial.name}</p>
+                    <p className="text-gray-700 text-sm">{testimonial.role}</p>
                   </div>
                 </div>
               ))}
@@ -269,8 +269,8 @@ export default function Home() {
         {/* CTA Banner */}
         <section className="py-16 bg-prestige-black text-white">
           <div className="container max-w-6xl mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-6 text-white">Ready to Get Started?</h2>
+            <p className="text-base md:text-lg mb-8 text-brand-light max-w-2xl mx-auto">
               Contact us today for a confidential consultation. We&apos;re here to help you uncover the truth 
               and protect your interests.
             </p>
@@ -281,14 +281,14 @@ export default function Home() {
             </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm">
               <div className="flex items-center space-x-2">
-                <Phone className="w-5 h-5 text-prestige-gold" />
-                <a href="tel:786-556-3313" className="hover:text-prestige-gold transition-colors">
+                <Phone className="w-5 h-5 text-brand-gold" />
+                <a href="tel:786-556-3313" className="hover:text-brand-gold transition-colors text-brand-light">
                   786-556-3313
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-5 h-5 text-prestige-gold" />
-                <a href="mailto:Prestigeinvestigations@outlook.com" className="hover:text-prestige-gold transition-colors">
+                <Mail className="w-5 h-5 text-brand-gold" />
+                <a href="mailto:Prestigeinvestigations@outlook.com" className="hover:text-brand-gold transition-colors text-brand-light">
                   Prestigeinvestigations@outlook.com
                 </a>
               </div>
